@@ -1,0 +1,21 @@
+<!doctype html>
+<html><head><title>Multi-Agent IT Service Desk</title></head>
+<body>
+<h1>Multi-Agent IT Service Desk</h1>
+<form method="post">
+<input name="employee" placeholder="Employee name" required><br><br>
+<textarea name="request" rows="5" cols="70"
+placeholder="Example: VPN is not connecting" required></textarea><br>
+<button>Process Request</button>
+</form>
+
+{% if result %}
+<hr>
+<h2>Status: {{ result.status }}</h2>
+<h3>Manager Agent</h3><p>{{ result.manager }}</p>
+<h3>Troubleshooting Agent</h3><p>{{ result.troubleshooting }}</p>
+<h3>Knowledge Agent</h3><p>{{ result.knowledge }}</p>
+<h3>Database Agent</h3><p>{{ result.database }}</p>
+<h3>Response Agent</h3><p>{{ result.final }}</p>
+{% endif %}
+</body></html>
